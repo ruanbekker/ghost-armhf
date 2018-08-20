@@ -1,0 +1,43 @@
+version: "3.4"
+
+services:
+  frontend-blog:
+    image: rbekker87/armhf-nginx-cache:ghost
+    networks:
+      - appnet
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.backend=frontend-blog"
+        - "traefik.backend.loadbalancer.swarm=true"
+        - "traefik.docker.network=appnet"
+        - "traefik.port=80"
+        - "traefik.frontend.passHostHeader=true"
+        - "traefik.frontend.rule=Host:newblog.domain.co.za"
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.role == manager]
+
+  backend-blog:
+    image: rbekker87/armhf-ghost:1.25
+    networks:
+      - appnet
+    environment:
+      - SERVER_URL=newblog.domain.co.za
+    volumes:
+      - type: bind
+        source: /mnt/volumes/newblog
+        target: /var/lib/ghost/content
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  appnet:
+    external: true
