@@ -3,6 +3,8 @@ version: "3.4"
 services:
   frontend-blog:
     image: rbekker87/armhf-nginx-cache:ghost
+    environment:
+      - GHOST_UPSTREAM_NAME=backend-blog
     networks:
       - appnet
     deploy:
