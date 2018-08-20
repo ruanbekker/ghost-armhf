@@ -1,4 +1,5 @@
-# ghost-armhf
+# ghost-armhf [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/arm_alpha/ruanbekker%2Fghost-armhf%2Fghost-armhf?branch=master&key=eyJhbGciOiJIUzI1NiJ9.NWI0NGRjNmExZDVkMDYwMDAxZDI4NWJl.npctK3AbmWlwYzvnK_U6qv-4XBNMqrEyCoGVbFPeMjY&type=cf-1)]( https://g.codefresh.io/repositories/ruanbekker/ghost-armhf/builds?filter=trigger:build;branch:master;service:5b7b4c3baedcd048f8ccbec4~ghost-armhf)
+
 Ghost Blog on Docker for ARM
 
 ## Environment Variables:
