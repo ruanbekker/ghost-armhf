@@ -20,3 +20,12 @@ Updates the url in the below config:
 ```
 
 If no environment variable is specified, the defaults will be kept.
+
+## Add-Ons:
+
+You can use this with a Nginx Reverse Proxy:
+- https://github.com/ruanbekker/nginx-cache-armhf
+
+## Docker Hub Image:
+
+- https://hub.docker.com/r/rbekker87/armhf-ghost/
