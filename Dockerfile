@@ -3,7 +3,7 @@ FROM rbekker87/armhf-node:8.11
 RUN apk add --no-cache 'su-exec>=0.2' && apk --update add bash gcc g++ make python && npm install sqlite3 --build-from-source
 
 ENV NODE_ENV production
-ENV GHOST_CLI_VERSION 1.8.1
+ENV GHOST_CLI_VERSION 1.9.1
 
 RUN npm install -g "ghost-cli@$GHOST_CLI_VERSION"
 
